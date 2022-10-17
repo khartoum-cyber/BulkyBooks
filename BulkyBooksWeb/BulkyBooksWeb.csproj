@@ -20,6 +20,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BulkyBooks.DataAccess\BulkyBooks.DataAccess.csproj" />
+    <ProjectReference Include="..\BulkyBooks.Utility\BulkyBooks.Utility.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,9 +1,6 @@
-﻿using BulkyBooks.DataAccess.Repository;
-using BulkyBooks.DataAccess.Repository.IRepository;
+﻿using BulkyBooks.DataAccess.Repository.IRepository;
 using BulkyBooks.Models;
-using BulkyBooks.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace BulkyBooksWeb.Areas.Admin.Controllers
 {
@@ -15,7 +12,6 @@ namespace BulkyBooksWeb.Areas.Admin.Controllers
         public CompanyController(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
-            _hostEnvironment = hostEnvironment;
         }
 
         public IActionResult Index()
@@ -35,7 +31,7 @@ namespace BulkyBooksWeb.Areas.Admin.Controllers
             }
             else
             {
-                company = _unitOfWork.Product.GetFirstOrDefault(u => u.Id == id);
+                company = _unitOfWork.Company.GetFirstOrDefault(u => u.Id == id);
                 return View(company);
             }
         }
